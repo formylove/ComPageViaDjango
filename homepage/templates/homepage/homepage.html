@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>摄养堂生物科技</title>
+    <link rel='shortcut icon' href="{%static 'favicon.ico'%}" />
+    <link rel='stylesheet' href="{%static 'common.css'%}"/>
+    <script src='{%static 'jquery.js'%}'></script>
+    <script src='{%static 'main.js'%}'></script>
+    <script src='{%static 'jquery.cycle.all.min.js'%}'></script>
+</head>
+<body>
+    <a name='top'></a>
+    <header >
+        <div class='logo'>
+              <a href='/' style="text-decoration: none;"> 
+                  <img src="{%static 'logo.png'%}" alt="摄养堂生物科技"/>
+               <span >摄养堂</span>
+            </a>
+        </div>
+
+
+    <ul class='nav'>
+            <li>
+                <a href='/'>首页</a>
+            </li> 
+            <li>
+                    <a href='/article'>产品介绍</a>
+                    </li>
+    </ul>
+
+    </header>
+<main>
+<article>
+<img src='{%static 'wp_1.png'%}'/>
+
+<img src='{%static 'wp_2.png'%}'/>
+
+</article>
+    
+</main>
+
+    <footer>
+        <div id='details'>
+            <span>Copyright © 2017</span>&nbsp;&nbsp;&nbsp;| 
+            <span>江苏摄养堂生物科技有限公司</span>&nbsp;&nbsp;&nbsp;| 
+            <span>联系电话 : 025-52401691</span>&nbsp;&nbsp;&nbsp;|
+            <span><a style='color:#444;' href="mailto:services@sheyangtang.com">邮箱 : services@sheyangtang.com</a></span>&nbsp;&nbsp;&nbsp;|
+            <span>公司地址 : 南京市玄武区珠江路88号1幢3118室</span>&nbsp;&nbsp;&nbsp;
+        </div>
+    </footer>
+
+
+    <aside>
+            <div class="toolbarbox">
+            <div class="mobel" imgname="zx" onclick="">
+                    <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=531653671&site=qq&menu=yes">
+                        <img id="msg" class="msg-img" src="{%static 'zx_h.png'%}" style="transform: rotate(0deg);">
+                    </a>
+                
+                <div class="mobelBox">
+                    <div class="shan"> </div>
+                    <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=531653671&site=qq&menu=yes"><p>购买咨询</p></a>
+                    <div class="triangle"> </div>
+                </div>
+            </div>
+    
+    
+            <div class="mobel" imgname="tel">
+                <div class="tool-line"></div>
+                <img class="imghover" src="{%static 'tel.png'%}">
+                <div class="hidemobelBox" style="display: none;">
+                    <p>客服热线 025-52401691</p>
+                    <div class="triangle"> </div>
+                </div>
+            </div>
+    
+
+    
+            <div class="Rtop dn" imgname="top">
+                <div class="tool-line dn"></div>
+               <a href="#"><img class="imghover" src="{%static 'top.png'%}"></a>
+            </div>  </div>
+        </aside>
+</body>
+</html>

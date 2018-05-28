@@ -1,0 +1,43 @@
+{
+  "name": "seq-theme-starter-basic",
+  "version": "1.0.0",
+  "description": "Use this blank theme to start building your own themes. Steps are stacked on top of each other so only the content will animate.",
+  "license": "GPL-3.0",
+  "homepage": "http://sequencejs.com/themes/starter-basic/",
+  "private": false,
+  "author": "Ian Lunn",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SequenceJS/starter-basic/"
+  },
+  "bugs": {
+    "url": "https://github.com/SequenceJS/starter-basic/issues",
+    "email": "bugs@sequencejs.com"
+  },
+  "keywords": [
+    "sequence",
+    "sequencejs",
+    "sequence theme",
+    "sequence.js",
+    "sequence.js theme",
+    "starter basic slider",
+    "starter basic presentation"
+  ],
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "connect-livereload": "~0.3.2",
+    "grunt-contrib-sass": "~0.6.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-autoprefixer": "~0.4.1",
+    "grunt-contrib-cssmin": "~0.7.0",
+    "grunt-contrib-uglify": "~0.2.7",
+    "grunt-contrib-connect": "~0.6.0",
+    "grunt-contrib-copy": "~0.5.0",
+    "time-grunt": "~0.2.8",
+    "grunt-open": "~0.2.3",
+    "grunt-version": "~0.3.0"
+  },
+  "dependencies": {
+    "load-grunt-tasks": "~0.2.0"
+  }
+}

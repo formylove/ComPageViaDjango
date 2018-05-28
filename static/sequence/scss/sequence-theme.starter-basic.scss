@@ -1,0 +1,218 @@
+/**
+ * Theme Name: Starter Basic
+ * Version: 1.0.0
+ * Theme URL: http://sequencejs.com/themes/starter-basic/
+ *
+ * Use this blank theme to start building your own themes. Steps are stacked on
+ * top of each other so only the content will animate.
+ *
+ * This theme is powered by Sequence.js - The
+ * responsive CSS animation framework for creating unique sliders,
+ * presentations, banners, and other step-based applications.
+ *
+ * Author: Ian Lunn
+ * Author URL: http://ianlunn.co.uk/
+ *
+ * Theme License: http://sequencejs.com/licenses/#free-theme
+ * Sequence.js Licenses: http://sequencejs.com/licenses/
+ *
+ * Copyright © 2015 Ian Lunn Design Limited unless otherwise stated.
+ */
+
+@import "partials/mixins";
+
+body,
+html,
+.seq {
+  /* Uncomment to make the theme full-screen */
+  /* width: 100% !important; */
+  /* max-width: 100% !important; */
+  /* height: 100% !important; */
+  /* max-height: 100% !important; */
+}
+
+$sequenceMobileHeight: 420px;
+$sequenceDesktopHeight: 585px;
+
+.seq {
+  position: relative;
+
+  /* Dimensions */
+  width: 100%;
+  height: $sequenceMobileHeight;
+  max-width: 100%;
+
+  /* Hide anything that goes beyond the boundaries of the Sequence container */
+  overflow: hidden;
+
+  /* Center the Sequence container on the page */
+  margin: 0 auto;
+  padding: 0;
+
+  /* Some basic styles */
+  font-family: sans-serif;
+  background: #F8F8F8;
+
+  .seq-pagination,
+  .seq-screen,
+  .seq-canvas,
+  .seq-canvas > * {
+    /* Reset the canvas and steps for better browser consistency */
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .seq-screen,
+  .seq-canvas,
+  .seq-canvas > * {
+    /* Make the width/height of the screen, canvas, and steps the same size
+     * as the Sequence element */
+    height: 100%;
+    width: 100%;
+  }
+
+  .seq-canvas {
+
+    /* Reset the font-size to remove 4px from :before and .title */
+    font-size: 0;
+
+    > * {
+      text-align: center;
+
+      /* Stack the steps in the same place (no canvas animation) */
+      position: absolute;
+    }
+
+    > *:before {
+      /* Vertically align .seq-content */
+      content: "";
+      display: inline-block;
+      vertical-align: middle;
+      height: 100%;
+    }
+  }
+
+  .seq-preloader {
+    background: #F8F8F8;
+  }
+
+  .seq-pagination {
+    /* Hide pagination when JS is disabled*/
+    display: none;
+
+    position: absolute;
+    z-index: 10;
+    bottom: 20px;
+    width: 100%;
+    border: none;
+    text-align: center;
+
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .seq-current {
+      background: #F96D38;
+    }
+
+    > * {
+      margin: 0 4px;
+      padding: 0;
+      display: inline-block;
+      zoom: 1;
+      width: 28px;
+      height: 28px;
+      cursor: pointer;
+      background: none;
+      border: #F96D38 solid 2px;
+      @include prefixed(transition-duration, ".1s");
+      @include prefixed(transition-property, "background-color");
+
+      /* Image replacement */
+      font: 0/0 a;
+      text-shadow: none;
+      color: transparent;
+    }
+  }
+
+  &.seq-active {
+    /* when JS is enabled */
+
+    /* Hide anything that goes beyond the boundaries of the Sequence container */
+    overflow: hidden;
+
+    .seq-pagination {
+      /* Show pagination */
+      display: block;
+    }
+
+    .seq-preloader,
+    .seq-pagination {
+      visibility: visible;
+    }
+
+    .seq-preloader.seq-preloaded {
+      visibility: hidden;
+    }
+  }
+
+  .seq-content {
+    /* Default styles for content */
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 4%;
+    /* Reset the font-size from 0 back to 16 */
+    font-size: 16px;
+  }
+
+  .seq-title {
+    /* Starting positions */
+    margin: 0 0 .5em 0;
+    display: block;
+    line-height: 1.4;
+    font-size: 1.8em;
+    opacity: 0;
+    @include prefixed(transition-duration, ".4s");
+    @include prefixed(transition-property, "opacity, transform");
+    @include prefixed(transform, "translateX(100px) translateY(0) translateZ(0)");
+  }
+
+  .seq-in {
+    /* Animate in positions for content */
+    .seq-title {
+      opacity: 1;
+      @include prefixed(transform, "translateX(0) translateY(0) translateZ(0)");
+    }
+  }
+
+  .seq-out {
+    /* Animate out positions for content */
+    .seq-title {
+      opacity: 0;
+      @include prefixed(transform, "translateX(-100px) translateY(0) translateZ(0)");
+    }
+  }
+
+  @media only screen and (min-width: 600px) {
+
+    /* Make the container 16:9 but no bigger than 90% of the screen height */
+    @include aspect-ratio(16, 9);
+    height: 100%;
+    max-height: 90vh;
+    min-height: $sequenceMobileHeight;
+
+    .seq-pagination > * {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+    .seq-title {
+      font-size: 2.6em;
+    }
+  }
+}

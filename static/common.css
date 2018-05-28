@@ -1,0 +1,255 @@
+.logo{
+    margin-top: 10px;
+    position: absolute; 
+     line-height: 40px;
+     font-weight: normal;
+     font-size: 25px;
+     font-family: 'STKaiti';
+}
+.logo img{
+    margin-right: 45px;
+    vertical-align: middle;
+    width: 65px;
+}
+.nav{
+    position: absolute;
+    top: 10px;
+    left: 195px;
+
+}
+.nav li{
+    list-style: none;
+}
+.nav li a:hover {background-color:#fff; color:#333;border-radius:16px; }
+
+.nav li, .nav li a
+ {float:left;     text-decoration:none; 	font-size:15px;	color:#444; height:32px; width:80px; line-height:32px; text-align:center; margin-right:15px;}
+body{
+    background: #f6f6f6 url('bg.jpg') no-repeat center 80px;
+    font-size: 14px;
+    color:#444;
+    font-family: "微软雅黑", "宋体", Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+header{
+    height: 80px;
+    position: relative; 
+    margin: 0px auto;
+    width: 980px;
+    padding: 0;
+
+}
+a:visited{
+    color: black;
+}
+a:-webkit-any-link{
+    color: black;
+}
+main{
+height: 700px;
+width:1200px;
+margin:30px auto;
+}
+article{
+}
+article img{
+    margin-top: 50px;
+    width: 1200px;
+}
+footer{
+    background: #7F807E;
+padding: 1px;
+
+}
+
+#details{
+margin:20px auto 15px auto ;
+width:1200px;
+}
+#details span{
+margin-left: 15px;
+}
+aside {
+    text-align: center;
+    position: fixed;
+    right: 0;
+    bottom: 20%;
+    z-index: 999;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+
+.toolbarbox {
+    width: 86px;
+    /*height: 169px;*/
+    background: #ffffff;
+    /*padding: 18px 0; */
+    border: 1px solid #ececec;
+    position: fixed;
+    right: 0;
+    bottom: 100px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .1);
+    /* overflow: hidden; */
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.toolbarbox img {
+    border: 0;
+    max-width: 100%;
+    /*margin-top: 10px;*/
+}
+.mobelBox a{
+    text-decoration: none;
+}
+.triangle {
+    width: 20px;
+    height: 40px;
+    background: transparent;
+    position: absolute;
+    right: -16px;
+    top: 0;
+}
+
+.mobel {
+    width: 86px;
+    /* height: 34px; */
+    margin: 0 auto;
+    padding: 15px 0;
+    /* overflow: hidden; */
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+}
+
+#msg {
+    -webkit-animation: aniSix-x 1s ease-in-out .2s infinite;
+    animation: aniSix-x 1s ease-in-out .2s infinite;
+}
+
+.tool-line {
+    width: 20px;
+    height: 1px;
+    border-bottom: 1px solid #e7e7e7;
+    position: absolute;
+    left: 33px;
+    top: 0;
+}
+
+.mobelBox {
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background: #fb5a02;
+    border-radius: 5px;
+    position: absolute;
+    right: 100px;
+    top: 17px;
+    cursor: pointer;
+}
+
+.hidemobelBox {
+    width: 230px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background: #fb5a02;
+    border-radius: 5px;
+    display: none;
+    position: absolute;
+    right: 100px;
+    top: 17px;
+    cursor: pointer;
+}
+
+.mobelBox a, .hidemobelBox a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+}
+.toolbarbox p{
+    margin-top: 0px;
+}
+.mobelBox p:after, .hidemobelBox p:after {
+    content: '';
+    position: absolute;
+    top: 11px;
+    right: -8px;
+    display: block;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 8px solid #fb5a02;
+}
+
+@-webkit-keyframes ball-scale {
+    0% {
+        -webkit-transform: scale(0);
+        transform: scale(0)
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 0
+    }
+}
+
+@keyframes ball-scale {
+    0% {
+        -webkit-transform: scale(0);
+        transform: scale(0)
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 0
+    }
+}
+
+.mobelBox .shan {
+    position: absolute;
+    left: 0;
+    right: 20px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    pointer-events: none;
+    background-color: rgba(255,255,255,.4);
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -o-border-radius: 100%;
+    -ms-border-radius: 100%;
+    border-radius: 100%;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    -ms-animation-fill-mode: both;
+    -o-animation-fill-mode: both;
+    animation-fill-mode: both;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    -webkit-animation: ball-scale 1s 0s ease-in-out infinite;
+    -moz-animation: ball-scale 1s 0s ease-in-out infinite;
+    -ms-animation: ball-scale 1s 0s ease-in-out infinite;
+    -o-animation: ball-scale 1s 0s ease-in-out infinite;
+    animation: ball-scale 1s 0s ease-in-out infinite;
+}
+
+.Rtop {
+    text-align: center;
+    cursor: pointer;
+    padding: 10px 0;
+    position: relative;
+}
+#sequence{
+    background: none;
+}
