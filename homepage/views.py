@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from django.template import loader
+from django.template import loader,Context
+from article.models import Article
 import re
 # Create your views here.
 
@@ -34,8 +35,9 @@ def checkMobile(request):
 def homepage(request):
         template = loader.get_template('homepage/homepage.html')
         template_m = loader.get_template('homepage/homepage_m.html')
+        article_list=Article.objects.filter(delete_flag=False).order_by("-release_date")[:9]
         if(checkMobile(request)):
                 return HttpResponse(template_m.render({},request))
         else:
-                return HttpResponse(template.render({},request))
+                return HttpResponse(template.render({'arts':article_list},request))
         

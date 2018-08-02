@@ -15,8 +15,25 @@ $(function() {
             $(this).cycle('resume');
         }
     );
-
-
+var i=0;
+setInterval(function(){
+    var t=0;
+    for(;;){
+        t=Math.ceil(3*Math.random());
+        if(i!=t){
+            break;
+        }
+    }
+    $('#p'+t).trigger('click');
+    i=t;
+},7000)
+$('.dot').hover(hoverDot).click(hoverDot);
+function hoverDot(){
+    var top = $(this).data('offsety');
+    $('.slide').animate({'top':top + "px"});
+    console.info($(this));
+    $(this).css('color',"#999").siblings().css('color',"#bbb");
+}
 
 
     /*****高亮显示隐藏*****/

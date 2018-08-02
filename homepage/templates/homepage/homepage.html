@@ -37,39 +37,39 @@
     <main>
         <article>
             <section class='article_block'>
-                <div class='news'>公司近况</div>
+                <div class='news'>公司新闻</div>
                 <hr>
                 <div class='articles'>
                     <div class="slide">
-                    <div id='article_1' class='article'>
-                        <div class='time_1'>2018
-                            <br>0604</div>
-                        <a name='meta'>
-                            <span name='title' style="display: block;">摄养堂与爱立信达成合作伙伴关系</span>
-                        </a>
+                        {% for article in arts %}
+                        <div id="article_{% cycle '1' '2' '3' %}" class='article'>
+                            <div class="time_{% cycle '1' '2' '3' %}">{{article.release_date|date:'Y'}}
+                                <br>{{article.release_date|date:'m-d'}}</div>
+                            <a name='meta' href='article/{{article.id}}' target="_blank">
+                                <span name='title' style="display:block;">{{article.title}}</span>
+                            </a>
+                        </div>
+                        {% endfor %}
+
+
                     </div>
-                    <div id='article_2' class='article'>
-                        <div class='time_2'>2018
-                            <br>0604</div>
-                        <a name='meta'>
-                            <span name='title' style="display: block;">摄养堂与爱立信达成合作伙伴关系</span>
-                        </a>
-                    </div>
-                    <div id='article_3' class='article'>
-                        <div class='time_3'>2018
-                            <br>0604</div>
-                        <a name='meta' >
-                            <span name='title' style="display: block;">摄养堂与爱立信达成合作伙伴关系</span>
-                        </a>
-                    </div>
-                </div>
 
                 </div>
-                <div class='page' ><span id='p1'>·</span><span id='p1'>·</span><span id='p1'>·</span></div>
+                <div class='page'>
+                    <span class='dot' data-offsety='0' id='p1'>·</span>
+                    {% if arts.count > 3 and arts.count  < 7 %} <span class='dot' data-offsety='-150' id='p2'>·</span>
+                        {% endif %} {% if arts.count > 6 %}
+                        <span class='dot' data-offsety='-300' id='p3'>·</span>
+                        {% endif %}
+                </div>
+            </section>
+            <section>
+<img src='http://www.ecnu.edu.cn/_upload/article/images/37/c5/3327b05e42d5ac95e5a49f6d3728/80b9d21e-c857-470b-b2aa-1006ac7ad05f.jpeg'/>
+
+
             </section>
 
 
-       
         </article>
 
     </main>
